@@ -13,6 +13,7 @@ const envSchema = z.object({
     .string()
     .regex(/^postgres(ql)?:\/\//, 'Must be a postgres connection string')
     .default('postgres://postgres:postgres@localhost:5432/postgres'),
+  LOG_LEVEL: z.enum(['fatal', 'error', 'warn', 'info', 'debug', 'trace', 'silent']).default('info'),
 })
 
 // Parse and validate
@@ -20,9 +21,11 @@ const parsed = envSchema.safeParse(process.env)
 
 if (!parsed.success) {
   console.error('❌ Environment validation failed:')
-  const errors = parsed.error.flatten().fieldErrors
-  Object.entries(errors).forEach(([field, messages]) => {
-    console.error(`  ${field}: ${messages?.join(', ')}`)
+  const errors = parsed.error.format()
+  Object.entries(errors).forEach(([field, value]) => {
+    if (field !== '_errors' && value && typeof value === 'object' && '_errors' in value) {
+      console.error(`  ${field}: ${value._errors.join(', ')}`)
+    }
   })
   process.exit(1)
 }
