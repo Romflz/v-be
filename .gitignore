@@ -4,3 +4,5 @@ dist
 # Ignore all env files except the example
 .env*
 !.env.example
+
+verifika-new-auth-firebase-adminsdk*
