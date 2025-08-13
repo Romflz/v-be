@@ -3,7 +3,7 @@ import { httpLogger, appLog } from './config/logger'
 import apiRoute from './routes/apiRoute'
 import { initDb } from './db/client'
 import { env } from './config/env'
-import './config/firebase' // side-effect import ensures Firebase Admin initializes once
+import './config/firebase'
 
 import cors from 'cors'
 

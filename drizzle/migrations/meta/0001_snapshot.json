@@ -1,6 +1,6 @@
 {
-  "id": "52c63d2d-d436-4adf-9335-d62768bc8a56",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "2338b838-57b5-44e4-b7fd-655fd3e0a51c",
+  "prevId": "52c63d2d-d436-4adf-9335-d62768bc8a56",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -58,6 +58,14 @@
           "primaryKey": false,
           "notNull": true,
           "default": "now()"
+        },
+        "status": {
+          "name": "status",
+          "type": "business_status",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'active'"
         }
       },
       "indexes": {
@@ -178,6 +186,14 @@
           "primaryKey": false,
           "notNull": true,
           "default": "now()"
+        },
+        "verification_status": {
+          "name": "verification_status",
+          "type": "user_verification_status",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'pending'"
         }
       },
       "indexes": {
@@ -266,12 +282,29 @@
     }
   },
   "enums": {
+    "public.business_status": {
+      "name": "business_status",
+      "schema": "public",
+      "values": [
+        "active",
+        "inactive"
+      ]
+    },
     "public.user_role": {
       "name": "user_role",
       "schema": "public",
       "values": [
         "user",
         "business"
+      ]
+    },
+    "public.user_verification_status": {
+      "name": "user_verification_status",
+      "schema": "public",
+      "values": [
+        "pending",
+        "verified",
+        "unverified"
       ]
     }
   },
