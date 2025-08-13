@@ -1,0 +1,36 @@
+{
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/pg": "^8.15.5",
+    "cross-env": "^10.0.0",
+    "drizzle-kit": "^0.31.4",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "name": "verifika-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --build",
+    "start": "cross-env NODE_ENV=production ts-node src/index.ts",
+    "dev": "cross-env NODE_ENV=development nodemon src/index.ts",
+    "start:staging": "cross-env NODE_ENV=staging ts-node src/index.ts",
+    "drizzle:generate": "cross-env NODE_ENV=development drizzle-kit generate",
+    "drizzle:migrate": "cross-env NODE_ENV=development drizzle-kit migrate",
+    "drizzle:push": "cross-env NODE_ENV=development drizzle-kit push",
+    "drizzle:studio": "cross-env NODE_ENV=development drizzle-kit studio",
+    "drizzle:drop": "cross-env NODE_ENV=development drizzle-kit drop"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "drizzle-orm": "^0.44.4",
+    "express": "^5.1.0",
+    "pg": "^8.16.3",
+    "zod": "^4.0.17"
+  }
+}
