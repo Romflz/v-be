@@ -5,15 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1755100975057,
-      "tag": "0000_windy_thunderbolt",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1755101315087,
-      "tag": "0001_omniscient_wallow",
+      "when": 1755118404926,
+      "tag": "0000_typical_crusher_hogan",
       "breakpoints": true
     }
   ]
