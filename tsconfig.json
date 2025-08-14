@@ -30,7 +30,6 @@
     "types": ["node"]
   },
   "include": ["src/**/*.ts", "src/types/**/*.d.ts"],
-  "exclude": ["drizzle.config.ts"],
   "ts-node": {
     "files": true
   }

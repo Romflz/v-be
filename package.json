@@ -4,7 +4,6 @@
     "@types/express": "^5.0.3",
     "@types/pg": "^8.15.5",
     "cross-env": "^10.0.0",
-    "drizzle-kit": "^0.31.4",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
@@ -16,13 +15,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc --build",
     "start": "cross-env NODE_ENV=production ts-node src/index.ts",
-    "dev": "cross-env NODE_ENV=development nodemon src/index.ts",
-    "start:staging": "cross-env NODE_ENV=staging ts-node src/index.ts",
-    "drizzle:generate": "cross-env NODE_ENV=development drizzle-kit generate",
-    "drizzle:migrate": "cross-env NODE_ENV=development drizzle-kit migrate",
-    "drizzle:push": "cross-env NODE_ENV=development drizzle-kit push",
-    "drizzle:studio": "cross-env NODE_ENV=development drizzle-kit studio",
-    "drizzle:drop": "cross-env NODE_ENV=development drizzle-kit drop"
+    "dev": "cross-env NODE_ENV=development nodemon src/index.ts"
   },
   "author": "",
   "license": "ISC",
@@ -31,7 +24,6 @@
     "@types/morgan": "^1.9.10",
     "cors": "^2.8.5",
     "dotenv": "^16.6.1",
-    "drizzle-orm": "^0.44.4",
     "express": "^5.1.0",
     "firebase-admin": "^13.4.0",
     "morgan": "^1.10.1",
