@@ -10,7 +10,6 @@ It features a clean structure with controllers, models, and routes, suitable for
 - Nodemon for auto-reloading during development
 - Organized folders: `controllers`, `models`, `routes`
 - Ready for expansion and integration with databases
-- Drizzle ORM (PostgreSQL) with schema & migrations
 
 ## Getting Started
 
@@ -55,8 +54,7 @@ backend/
 │   └── index.ts
 ├── package.json
 ├── tsconfig.json
-├── drizzle.config.ts
-├── drizzle/            # Generated migrations
+
 ```
 
 - **controllers/**: Request logic, validation, authentication
@@ -69,8 +67,6 @@ backend/
 - Node.js >= 22
 - npm >= 10
 
-## Drizzle ORM
-
 ### Environment Variable
 
 Create a `.env` file (not committed) with:
@@ -78,40 +74,3 @@ Create a `.env` file (not committed) with:
 ```
 DATABASE_URL=postgres://user:password@localhost:5432/mydb
 ```
-
-### Generate Migration
-
-Edit schema in `src/db/schema/index.ts`, then:
-
-```bash
-npm run drizzle:generate
-```
-
-### Apply Migrations
-
-```bash
-npm run drizzle:migrate
-```
-
-or push schema directly (experimental):
-
-```bash
-npm run drizzle:push
-```
-
-### Drizzle Studio
-
-```bash
-npm run drizzle:studio
-```
-
-### Example Schema
-
-See `src/db/schema/index.ts` for `users` table.
-
-### Usage in Code
-
-`src/db/client.ts` exports `db` (Drizzle instance) and `initDb()` which is called before server starts.
-
-Example route: POST /example { "name": "Alice" }
-
