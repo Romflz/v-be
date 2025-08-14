@@ -1,0 +1,1 @@
+{"root":["./src/index.ts","./src/config/env.ts","./src/config/firebase.ts","./src/config/logger.ts","./src/controllers/synccontroller.ts","./src/db/client.ts","./src/db/schema/index.ts","./src/middlewares/auth.ts","./src/models/usermodel.ts","./src/routes/apiroute.ts","./src/types/express.d.ts"],"version":"5.9.2"}

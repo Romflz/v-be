@@ -8,7 +8,7 @@ export async function authMiddleware(req: Request, res: Response, next: NextFunc
     const match = /^Bearer (.+)$/.exec(auth)
     if (!match) return res.status(401).json({ error: 'Missing bearer token' })
     const decoded = (await verifyIdToken(match[1]!)) as DecodedIdToken
-    ;(req as any).user = decoded
+    req.user = decoded
     return next()
   } catch {
     return res.status(401).json({ error: 'Invalid token' })

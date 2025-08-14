@@ -6,3 +6,4 @@ dist
 !.env.example
 
 verifika-new-auth-firebase-adminsdk*
+/src/generated/prisma
